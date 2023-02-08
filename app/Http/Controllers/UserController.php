@@ -46,8 +46,4 @@ class UserController extends Controller
         $request->session()->regenerateToken();
         return back()->with('message', 'You have been logged out successfully!');
     }
-
-    public function dashboard() {
-        return view('admin.dashboard');
-    }
 }

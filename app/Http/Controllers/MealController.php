@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Meal;
 use Illuminate\Http\Request;
 
 class MealController extends Controller
@@ -12,5 +13,11 @@ class MealController extends Controller
 
     public function menu() {
         return view('food.menu');
+    }
+
+    public function dashboard() {
+        return view('admin.dashboard', [
+            'meals' => Meal::all()
+        ]);
     }
 }

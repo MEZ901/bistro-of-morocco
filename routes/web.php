@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\MealController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -37,4 +38,4 @@ Route::post('/auth', [UserController::class, 'authenticate']);
 Route::post('/logout', [UserController::class, 'logout']);
 
 // Show Dashboard
-Route::get('/dashboard', [UserController::class, 'dashboard']);
+Route::get('/dashboard', [MealController::class, 'dashboard']);
