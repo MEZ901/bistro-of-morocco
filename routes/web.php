@@ -18,8 +18,20 @@ use App\Http\Controllers\UserController;
 // index
 Route::get('/', [FoodController::class, 'index']);
 
+// Show the menu
+Route::get('/menu', [FoodController::class, 'menu']);
+
 // Show Login Form
 Route::get('/login', [UserController::class, 'login']);
 
 // Show Register Form
 Route::get('/register', [UserController::class, 'register']);
+
+// Submit Register Form
+Route::post('/users', [UserController::class, 'store']);
+
+// Submit Login Form
+Route::post('/auth', [UserController::class, 'authenticate']);
+
+// Logout
+Route::post('/logout', [UserController::class, 'logout']);
