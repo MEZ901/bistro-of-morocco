@@ -16,10 +16,10 @@ use App\Http\Controllers\UserController;
 */
 
 // index
-Route::get('/', [FoodController::class, 'index']);
+Route::get('/', [MealController::class, 'index']);
 
 // Show the menu
-Route::get('/menu', [FoodController::class, 'menu']);
+Route::get('/menu', [MealController::class, 'menu']);
 
 // Show Login Form
 Route::get('/login', [UserController::class, 'login']);
@@ -35,3 +35,6 @@ Route::post('/auth', [UserController::class, 'authenticate']);
 
 // Logout
 Route::post('/logout', [UserController::class, 'logout']);
+
+// Show Dashboard
+Route::get('/dashboard', [UserController::class, 'dashboard']);
