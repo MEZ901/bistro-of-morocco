@@ -7,7 +7,7 @@
                 <x-btn><a href="/login">Login</a></x-btn>
                 <x-btn><a href="/register">Register</a></x-btn>
                 <div class="flex flex-col">
-                    <x-btn><a href="/guest">continue as a guest</a></x-btn>
+                    <x-btn><a href="/menu">continue as a guest</a></x-btn>
                 </div>
             </div>
         </div>
