@@ -12,7 +12,7 @@ class MealController extends Controller
     }
 
     public function menu() {
-        return view('food.menu');
+        return view('meal.menu');
     }
 
     public function dashboard() {
@@ -35,5 +35,19 @@ class MealController extends Controller
     public function delete(Meal $meal) {
         $meal->delete();
         return back()->with('success_msg', 'The meal has been deleted successfully!');
+    }
+
+    public function edit(Meal $meal) {
+        return view('admin.edit', ['meal' => $meal]);
+    }
+
+    public function update(Request $request, Meal $meal) {
+        $formFields = $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'description' => 'required'
+        ]);
+        $meal->update($formFields);
+        return redirect('/dashboard')->with('success_msg', 'The meal has been updated successfully!');
     }
 }

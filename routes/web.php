@@ -45,3 +45,9 @@ Route::post('/meal/store', [MealController::class, 'store']);
 
 // Delete Meal
 Route::delete('/delete/{meal}', [MealController::class, 'delete']);
+
+// Edit Meal
+Route::get('/edit/{meal}', [MealController::class, 'edit']);
+
+// Update Meal
+Route::put('/meal/update/{meal}', [MealController::class, 'update']);

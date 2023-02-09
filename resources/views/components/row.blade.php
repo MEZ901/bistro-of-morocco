@@ -16,7 +16,7 @@
                     <a href="#" class="block py-2 px-4 hover:bg-gray-100">Show</a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 px-4 hover:bg-gray-100">Edit</a>
+                    <a href="/edit/{{$meal->id}}" class="block py-2 px-4 hover:bg-gray-100">Edit</a>
                 </li>
             </ul>
             <form method="POST" action="/delete/{{$meal->id}}" class="py-1">
