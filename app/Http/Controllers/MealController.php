@@ -17,7 +17,7 @@ class MealController extends Controller
 
     public function dashboard() {
         return view('admin.dashboard', [
-            'meals' => Meal::latest()->get()
+            'meals' => Meal::latest()->paginate(6)
         ]);
     }
 

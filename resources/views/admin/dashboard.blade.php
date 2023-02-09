@@ -100,10 +100,12 @@
                         @endunless
                     </tbody>
                 </table>
+                <div class="mt-6 p-4">
+                    {{$meals->links()}}
+                </div>
             </div>
         </div>
     </div>
     <x-modal />
-    {{-- <x-delete-modal /> --}}
 </section>
 </x-layout>
