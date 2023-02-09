@@ -31,4 +31,9 @@ class MealController extends Controller
         Meal::create($formFields);
         return back()->with('success_msg', 'The meal has been added successfully!');
     }
+
+    public function delete(Meal $meal) {
+        $meal->delete();
+        return back()->with('success_msg', 'The meal has been deleted successfully!');
+    }
 }

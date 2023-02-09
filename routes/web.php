@@ -42,3 +42,6 @@ Route::get('/dashboard', [MealController::class, 'dashboard']);
 
 // Add Meal
 Route::post('/meal/store', [MealController::class, 'store']);
+
+// Delete Meal
+Route::delete('/delete/{meal}', [MealController::class, 'delete']);
