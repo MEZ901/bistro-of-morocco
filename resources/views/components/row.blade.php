@@ -19,9 +19,11 @@
                     <a href="#" class="block py-2 px-4 hover:bg-gray-100">Edit</a>
                 </li>
             </ul>
-            <div class="py-1">
-                <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Delete</a>
-            </div>
+            <form method="POST" action="/delete" class="py-1">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Delete</button>
+            </form>
         </div>
     </td>
 </tr>

@@ -39,3 +39,6 @@ Route::post('/logout', [UserController::class, 'logout']);
 
 // Show Dashboard
 Route::get('/dashboard', [MealController::class, 'dashboard']);
+
+// Add Meal
+Route::post('/meal/store', [MealController::class, 'store']);
