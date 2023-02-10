@@ -1,5 +1,5 @@
 <x-layout>
-    <h1 class="text-2xl font-bold text-center m-2">Dashboard</h1>
+    @include('partials._dashboard-navbar')
     <section class="p-3 sm:p-5">
         <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
             <div class="bg-white relative shadow-md sm:rounded-lg overflow-hidden">
