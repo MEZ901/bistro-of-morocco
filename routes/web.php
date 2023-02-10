@@ -35,7 +35,7 @@ Route::post('/users', [UserController::class, 'store']);
 Route::post('/auth', [UserController::class, 'authenticate']);
 
 // Logout
-Route::post('/logout', [UserController::class, 'logout']);
+Route::get('/logout', [UserController::class, 'logout']);
 
 // Show Dashboard
 Route::get('/dashboard', [MealController::class, 'dashboard']);

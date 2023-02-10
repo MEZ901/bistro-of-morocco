@@ -59,7 +59,7 @@
                     </ul>
                     <ul class="py-1 font-light text-gray-500" aria-labelledby="dropdown">
                         <li>
-                            <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100">Sign out</a>
+                            <a href="/logout" class="block py-2 px-4 text-sm hover:bg-gray-100">Sign out</a>
                         </li>
                     </ul>
                 </div>

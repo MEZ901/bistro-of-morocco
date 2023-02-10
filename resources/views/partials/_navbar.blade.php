@@ -3,12 +3,7 @@
     <div class="flex">
         @auth
             <p class="mr-2">{{auth()->user()->username}}</p>
-            <form class="inline" method="POST" action="/logout">
-                @csrf
-                <button type="submit">
-                    <i class="fa-solid fa-door-closed"></i> Logout
-                </button>
-            </form>
+            <a href="/logout"><i class="fa-solid fa-door-closed"></i> Logout</a>
         @else
             <x-btn><a href="/login">Login</a></x-btn>
             <x-btn><a href="/register">Register</a></x-btn>
