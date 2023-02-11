@@ -13,7 +13,7 @@
         <div id="dropdown-{{$meal->id}}" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow">
             <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdown-button-{{$meal->id}}">
                 <li>
-                    <a href="#" class="block py-2 px-4 hover:bg-gray-100">Show</a>
+                    <a href="/meal/{{$meal->id}}" class="block py-2 px-4 hover:bg-gray-100">Show</a>
                 </li>
                 <li>
                     <a href="/edit/{{$meal->id}}" class="block py-2 px-4 hover:bg-gray-100">Edit</a>

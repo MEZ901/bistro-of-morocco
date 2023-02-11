@@ -51,3 +51,6 @@ Route::get('/edit/{meal}', [MealController::class, 'edit']);
 
 // Update Meal
 Route::put('/meal/update/{meal}', [MealController::class, 'update']);
+
+// Show Single Meal
+Route::get('/meal/{meal}', [MealController::class, 'show']);

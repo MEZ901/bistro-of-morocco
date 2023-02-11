@@ -12,7 +12,9 @@ class MealController extends Controller
     }
 
     public function menu() {
-        return view('meal.menu');
+        return view('meal.menu', [
+            'meals' => Meal::latest()->paginate(6)
+        ]);
     }
 
     public function dashboard() {
@@ -52,5 +54,9 @@ class MealController extends Controller
         ]);
         $meal->update($formFields);
         return redirect('/dashboard')->with('success_msg', 'The meal has been updated successfully!');
+    }
+
+    public function show(Meal $meal) {
+        return view('meal.show', ['meal' => $meal]);
     }
 }
