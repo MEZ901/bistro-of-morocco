@@ -19,7 +19,7 @@ class MealController extends Controller
 
     public function dashboard() {
         return view('admin.dashboard', [
-            'meals' => Meal::latest()->paginate(6)
+            'meals' => Meal::latest()->paginate(10)
         ]);
     }
 
@@ -28,7 +28,7 @@ class MealController extends Controller
             'name' => 'required',
             'price' => 'required',
             'description' => 'required',
-            // 'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000'
+            'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000'
         ]);
         if($request->hasFile('image')){
             $formFields['image'] = $request->file('image')->store('logos', 'public');
