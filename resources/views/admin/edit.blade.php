@@ -1,25 +1,38 @@
 <x-layout>
     <div class="p-5">
         <h1 class="font-bold text-4xl text-center m-5">Edit Meal</h1>
-        <form method="POST" action="/meal/update/{{$meal->id}}">
+        <form method="POST" action="/meal/update/{{$meal->id}}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="grid gap-4 mb-4 sm:grid-cols-2">
                 <div>
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
                     <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Type name of the meal" value="{{$meal->name}}" required="">
+                    @error('name')
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                    @enderror
                 </div>
                 <div>
                     <label for="price" class="block mb-2 text-sm font-medium text-gray-900 ">Price</label>
                     <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="199DH" value="{{$meal->price}}" required="">
+                    @error('price')
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                    @enderror
                 </div>
-                {{-- <div class="sm:col-span-2">
+                <div class="sm:col-span-2">
                     <label class="block mb-2 text-sm font-medium text-gray-900" for="file_input">Upload image</label>
-                    <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" id="file_input" type="file">                        
-                </div> --}}
+                    <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" id="file_input" type="file" name="image">
+                    @error('image')
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                    @enderror                       
+                </div>
+                <div style="background-size:cover; background-position: center; background-repeat:no-repeat; background-image:url('{{$meal->image ? asset('storage/' . $meal->image) : asset('images/default.jpeg')}}'); width:80%; height:250px;" ></div>
                 <div class="sm:col-span-2">
                     <label for="description" class="block mb-2 text-sm font-medium text-gray-900">Description</label>
-                    <textarea id="description" rows="4" name="description" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Write meal description here">{{$meal->description}}</textarea>                    
+                    <textarea id="description" rows="4" name="description" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Write meal description here">{{$meal->description}}</textarea> 
+                    @error('description')
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                    @enderror                   
                 </div>
             </div>
             <button type="submit" class="text-white inline-flex items-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
