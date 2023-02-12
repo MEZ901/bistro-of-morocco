@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -45,5 +46,24 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/menu')->with('message', 'You have been logged out successfully!');
+    }
+
+    public function edit() {
+        return view('admin.account-settings');
+    }
+
+    public function update(Request $request) {
+        $formFields = $request->validate([
+            'username' => 'required|min:3',
+            'email' => 'required|email'
+        ]);
+        if($request->password) {
+            if(!Hash::check($request->current_password, auth()->user()->password)){
+                return back()->with('failed_msg', 'The current password is incorrect');
+            }
+            
+        }
+        auth()->user()->update($formFields);
+        return back()->with('success_msg', 'The profile information has been updated successfully!');
     }
 }
