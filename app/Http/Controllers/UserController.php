@@ -53,15 +53,21 @@ class UserController extends Controller
     }
 
     public function update(Request $request) {
-        $formFields = $request->validate([
-            'username' => 'required|min:3',
-            'email' => 'required|email'
-        ]);
-        if($request->password) {
+        if($request->current_password || $request->password) {
             if(!Hash::check($request->current_password, auth()->user()->password)){
                 return back()->with('failed_msg', 'The current password is incorrect');
             }
-            
+            $formFields = $request->validate([
+                'username' => 'required|min:3',
+                'email' => 'required|email',
+                'password' => 'required|confirmed|min:4'
+            ]);
+            $formFields['password'] = bcrypt($formFields['password']);
+        } else {
+            $formFields = $request->validate([
+                'username' => 'required|min:3',
+                'email' => 'required|email'
+            ]);
         }
         auth()->user()->update($formFields);
         return back()->with('success_msg', 'The profile information has been updated successfully!');
