@@ -55,23 +55,15 @@
                                 <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
                                     <li class="flex items-center">
                                         <input id="apple" type="checkbox" value="" class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500">
-                                        <label for="apple" class="ml-2 text-sm font-medium text-gray-900">Apple (56)</label>
+                                        <label for="apple" class="ml-2 text-sm font-medium text-gray-900">Breakfast (56)</label>
                                     </li>
                                     <li class="flex items-center">
                                         <input id="fitbit" type="checkbox" value="" class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500">
-                                        <label for="fitbit" class="ml-2 text-sm font-medium text-gray-900">Microsoft (16)</label>
+                                        <label for="fitbit" class="ml-2 text-sm font-medium text-gray-900">Lunch (16)</label>
                                     </li>
                                     <li class="flex items-center">
                                         <input id="razor" type="checkbox" value="" class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500">
-                                        <label for="razor" class="ml-2 text-sm font-medium text-gray-900">Razor (49)</label>
-                                    </li>
-                                    <li class="flex items-center">
-                                        <input id="nikon" type="checkbox" value="" class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500">
-                                        <label for="nikon" class="ml-2 text-sm font-medium text-gray-900">Nikon (12)</label>
-                                    </li>
-                                    <li class="flex items-center">
-                                        <input id="benq" type="checkbox" value="" class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 focus:ring-2">
-                                        <label for="benq" class="ml-2 text-sm font-medium text-gray-900">BenQ (74)</label>
+                                        <label for="razor" class="ml-2 text-sm font-medium text-gray-900">Dinner (49)</label>
                                     </li>
                                 </ul>
                             </div>

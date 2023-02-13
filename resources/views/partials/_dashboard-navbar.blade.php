@@ -46,15 +46,12 @@
                 <!-- Dropdown menu -->
                 <div class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow" id="dropdown">
                     <div class="py-3 px-4">
-                        <span class="block text-sm font-semibold text-gray-900">Neil sims</span>
-                        <span class="block text-sm font-light text-gray-500 truncate">name@flowbite.com</span>
+                        <span class="block text-sm font-semibold text-gray-900">{{auth()->user()->username}}</span>
+                        <span class="block text-sm font-light text-gray-500 truncate">{{auth()->user()->email}}</span>
                     </div>
                     <ul class="py-1 font-light text-gray-500" aria-labelledby="dropdown">
                         <li>
-                            <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100">My profile</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100">Account settings</a>
+                            <a href="/settings" class="block py-2 px-4 text-sm hover:bg-gray-100">Account settings</a>
                         </li>
                     </ul>
                     <ul class="py-1 font-light text-gray-500" aria-labelledby="dropdown">

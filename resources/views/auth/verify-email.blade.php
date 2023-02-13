@@ -23,16 +23,6 @@
                 </svg>
             </div>
             <p>Please check your email box to verify your email address!</p>
-            {{-- <div class="mt-4">
-                <button class="px-2 py-2 text-blue-200 bg-blue-600 rounded">Click to Verify Email</button>
-                <p class="mt-4 text-sm">If you’re having trouble clicking the "Verify Email Address" button, copy
-                    and
-                    paste
-                    the URL below
-                    into your web browser:
-                    <a href="" class="text-blue-600">http://localhost:8000/email/verify/3/1ab7a09a3</a>
-                </p>
-            </div> --}}
         </div>
     </div>
 </x-layout>
