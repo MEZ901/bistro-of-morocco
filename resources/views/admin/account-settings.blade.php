@@ -1,6 +1,9 @@
 <x-layout>
     <section class="bg-white">
-        <div class="max-w-2xl px-4 py-8 mx-auto lg:py-16">
+        <button onclick="window.history.back()" type="button" class="cursor-pointer m-5 text-white inline-flex items-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+            <i class="fa fa-arrow-left mr-2" aria-hidden="true"></i> Back
+        </button> 
+        <div class="max-w-2xl px-4 py-8 mx-auto">
             <h2 class="mb-4 text-xl font-bold text-gray-900">Account Settings</h2>
             <form method="POST" action="/account/update">
                 @method('PUT')
