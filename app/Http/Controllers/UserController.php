@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 
 class UserController extends Controller
 {
@@ -25,6 +27,7 @@ class UserController extends Controller
         ]);
         $formFields['password'] = bcrypt($formFields['password']);
         $user = User::create($formFields);
+        event(new Registered($user));
         auth()->login($user);
         return redirect('/menu')->with('success_msg', 'Welcome, Your account has been created successfully!');
     }
