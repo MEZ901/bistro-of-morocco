@@ -16,7 +16,7 @@ class EnsureUserHasRole
      */
     public function handle(Request $request, Closure $next, string $role)
     {
-        if(auth()->user()->email == 'super-admin@administration.com' && $role == 'superAdmin') {
+        if(auth()->user()->is_super_admin && $role == 'superAdmin') {
             return $next($request);
         }
         if(auth()->user()->is_admin && $role == 'admin') {
