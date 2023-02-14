@@ -23,7 +23,7 @@ Route::get('/', [MealController::class, 'index']);
 Route::get('/menu', [MealController::class, 'menu']);
 
 // Show Login Form
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
 
 // Show Register Form
 Route::get('/register', [UserController::class, 'register']);
@@ -60,6 +60,12 @@ Route::get('/settings', [UserController::class, 'edit'])->middleware(['auth', 'v
 
 // Update Account Info
 Route::put('/account/update', [UserController::class, 'Update'])->middleware(['auth', 'verified']);
+
+// Super Admin Dashboard
+Route::get('/super/dashboard', [UserController::class, 'dashboard']);
+
+// Set Admin
+Route::patch('/set-admin/{user}', [UserController::class, 'setAdmin']);
 
 // Email Verification Notice
 Route::get('/email/verify', function () {

@@ -75,4 +75,19 @@ class UserController extends Controller
         auth()->user()->update($formFields);
         return back()->with('success_msg', 'The profile information has been updated successfully!');
     }
+
+    public function dashboard() {
+        return view('superAdmin.dashboard', [
+            'users' => User::latest()->get()
+        ]);
+    }
+
+    public function setAdmin(User $user) {
+        if($user->is_admin) {
+            $user->update(['is_admin' => false]);
+        } else {
+            $user->update(['is_admin' => true]);
+        }
+        return back();
+    }
 }
