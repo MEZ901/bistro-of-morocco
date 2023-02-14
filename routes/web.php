@@ -38,7 +38,7 @@ Route::post('/auth', [UserController::class, 'authenticate']);
 Route::get('/logout', [UserController::class, 'logout']);
 
 // Show Dashboard
-Route::get('/dashboard', [MealController::class, 'dashboard'])->middleware(['auth', 'verified']);
+Route::get('/dashboard', [MealController::class, 'dashboard'])->middleware(['auth', 'verified', 'role:admin']);
 
 // Add Meal
 Route::post('/meal/store', [MealController::class, 'store'])->middleware(['auth', 'verified']);
@@ -62,7 +62,7 @@ Route::get('/settings', [UserController::class, 'edit'])->middleware(['auth', 'v
 Route::put('/account/update', [UserController::class, 'Update'])->middleware(['auth', 'verified']);
 
 // Super Admin Dashboard
-Route::get('/super/dashboard', [UserController::class, 'dashboard']);
+Route::get('/super/dashboard', [UserController::class, 'dashboard'])->middleware(['auth', 'role:superAdmin']);
 
 // Set Admin
 Route::patch('/set-admin/{user}', [UserController::class, 'setAdmin']);

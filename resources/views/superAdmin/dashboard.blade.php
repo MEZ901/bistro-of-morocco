@@ -15,7 +15,9 @@
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
-                                <x-super-row :user="$user" />
+                                @if ($user->email != auth()->user()->email)
+                                    <x-super-row :user="$user" />
+                                @endif
                             @endforeach
                         </tbody>
                     </table>
